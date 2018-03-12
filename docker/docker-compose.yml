@@ -1,14 +1,16 @@
 version: '3.3'
 
+volumes:
+  mysql:
+
 services:
-  ## A default mysql image
-  ## We map a local directory (data/mysql) so we can have the mysql data locally
-  ## and reuse it if we need to remove containers and images for rebuilding from scratch.
+  # MySQL
   db:
     container_name: jetpack_mysql
     image: mysql:5.7
     volumes:
-      - ./data/mysql:/var/lib/mysql
+      # Local volume mount for persistence
+      - mysql:/var/lib/mysql
     restart: always
     ports:
       - "3306:3306"
