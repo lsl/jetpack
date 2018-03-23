@@ -1,7 +1,7 @@
-( function( wp, strings ) {
+( function( wp, i18n ) {
 	wp.blocks.registerBlockType(
 		'jetpack/form', {
-			title : strings['Form'],
+			title : i18n.__( 'Form' ),
 			icon : 'feedback',
 			category : 'common',
 
@@ -52,7 +52,7 @@
 									key : 'jetpack/form/inspector/subject',
 									onChange : handleSubjectChange,
 									value : props.attributes.subject,
-									label : strings['What would you like the subject of the email to be?']
+									label : i18n.__( 'What would you like the subject of the email to be?' )
 									}
 							),
 							wp.element.createElement(
@@ -61,7 +61,7 @@
 									key : 'jetpack/form/inspector/to',
 									onChange : handleToChange,
 									value : props.attributes.to,
-									label : strings['Which email address should we send the submissions to?'],
+									label : i18n.__( 'Which email address should we send the submissions to?' ),
 									help : 'Help for to line whatever'
 									}
 							)
@@ -75,4 +75,4 @@
 			}
 		}
 	);
-} )( window.wp, window.grunionGutenblocks.strings );
+} )( window.wp, window.wp.i18n );
