@@ -11,7 +11,7 @@ class Jetpack_Contact_Form_Gutenberg {
 
 	public static function init() {
 		register_block_type(
-			'jetpack/contact-form',
+			'jetpack/form',
 			array(
 				'render_callback' => function ( $args ) {
 					return '<pre>' . print_r( $args, true ) . '</pre>';
@@ -32,7 +32,7 @@ class Jetpack_Contact_Form_Gutenberg {
 		wp_localize_script(
 			'jetpack-contact-form-gutenberg', 'grunionGutenblocks', array(
 				'strings' => array(
-					'Contact Form' => __( 'Contact Form', 'jetpack' ),
+					'Form' => __( 'Form', 'jetpack' ),
 					'What would you like the subject of the email to be?' =>
 							__( 'What would you like the subject of the email to be?', 'jetpack' ),
 					'Which email address should we send the submissions to?' =>

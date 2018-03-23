@@ -1,7 +1,7 @@
 ( function( wp, strings ) {
 	wp.blocks.registerBlockType(
-		'jetpack/contact-form', {
-			title : strings['Contact Form'],
+		'jetpack/form', {
+			title : strings['Form'],
 			icon : 'feedback',
 			category : 'common',
 
@@ -38,7 +38,7 @@
 						wp.element.createElement(
 							'h1',
 							{
-								key : 'jetpack/contact-form/placeholder',
+								key : 'jetpack/form/placeholder',
 							},
 							'This is a Placeholder.'
 						),
@@ -49,7 +49,7 @@
 							wp.element.createElement(
 								wp.blocks.InspectorControls.TextControl,
 								{
-									key : 'jetpack/contact-form/inspector/subject',
+									key : 'jetpack/form/inspector/subject',
 									onChange : handleSubjectChange,
 									value : props.attributes.subject,
 									label : strings['What would you like the subject of the email to be?']
@@ -58,7 +58,7 @@
 							wp.element.createElement(
 								wp.blocks.InspectorControls.TextControl,
 								{
-									key : 'jetpack/contact-form/inspector/to',
+									key : 'jetpack/form/inspector/to',
 									onChange : handleToChange,
 									value : props.attributes.to,
 									label : strings['Which email address should we send the submissions to?'],
@@ -73,7 +73,6 @@
 			save : function() {
 				return null;
 			}
-
 		}
 	);
 } )( window.wp, window.grunionGutenblocks.strings );
