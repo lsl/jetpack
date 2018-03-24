@@ -46,6 +46,10 @@
 					el(
 						InnerBlocks, {
 							key: 'jetpack/form/innerblocks',
+							layouts: {
+								stacked: { label: 'Stacked', icon: 'align-left' },
+								horizontal: { label: 'Horizontal', icon: 'align-wide' },
+							}
 						}
 					),
 					// Display Inspector Controls
