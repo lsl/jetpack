@@ -1,10 +1,14 @@
 ( function(
 	blocks,
+	components,
 	element,
 	i18n
 ) {
 	var el = element.createElement;
-	var InspectorControls = wp.blocks.InspectorControls;
+	var InspectorControls = blocks.InspectorControls;
+	var InnerBlocks = blocks.InnerBlocks;
+	var TextControl = components.TextControl;
+
 	// Register the form block under jetpack/form
 	blocks.registerBlockType(
 		'jetpack/form',
@@ -18,12 +22,12 @@
 			attributes : {
 				subject : {
 					type : 'string',
-					default : ''
+					default : '',
 				},
 				to : {
-					type : 'string',
-					default : ''
-				}
+					type: 'string',
+					default: ''
+				},
 			},
 
 			// Display the form in the editor
@@ -32,30 +36,33 @@
 					props.setAttributes(
 						{
 							subject : value
-							}
+						}
 					);
-						return value;
+					return value;
 				}
 				function handleToChange( value ) {
 					props.setAttributes(
 						{
 							to : value
-							}
+						}
 					);
 					return value;
 				}
 
 				return [
+					// Display the inner blocks
 					el(
-						'h1', { key : 'jetpack/form/placeholder' },
-						'This is a Placeholder.'
+						InnerBlocks, {
+							key: 'jetpack/form/innerblocks',
+						}
 					),
-					// The below is only shown under focus
+					// Display Inspector Controls
 					! ! props.focus && el(
-						InspectorControls, { key : 'inspector' },
+						InspectorControls,
+						{ key : 'inspector' },
 						[
 							el(
-								InspectorControls.TextControl,
+								TextControl,
 								{
 									key : 'jetpack/form/inspector/subject',
 									onChange : handleSubjectChange,
@@ -64,13 +71,12 @@
 								}
 							),
 							el(
-								InspectorControls.TextControl,
+								TextControl,
 								{
 									key : 'jetpack/form/inspector/to',
 									onChange : handleToChange,
 									value : props.attributes.to,
-									label : i18n.__( 'Which email address should we send the submissions to?' ),
-									help : 'Help for to line whatever'
+									label : i18n.__( 'Which email address should we send the submissions to?' )
 								}
 							)
 						]
@@ -78,13 +84,17 @@
 				];
 			},
 
-			save : function() {
-				return null;
+			save : function( props ) {
+				return el(
+					'div', { className: props.className },
+					el( InnerBlocks.Content )
+				);
 			}
 		}
 	);
 } )(
 	window.wp.blocks,
+	window.wp.components,
 	window.wp.element,
 	window.wp.i18n
 );

@@ -11,7 +11,7 @@ function jetpack_form_enqueue_editor() {
 	wp_enqueue_script(
 		'jetpack-contact-form-gutenberg',
 		plugins_url( 'js/jetpack-contact-form-gutenberg.js', __FILE__ ),
-		array( 'wp-blocks', 'wp-i18n', 'wp-element' ),
+		array( 'wp-blocks', 'wp-components', 'wp-element', 'wp-i18n' ),
 		filemtime( plugin_dir_path( __FILE__ ) . 'js/jetpack-contact-form-gutenberg.js' )
 	);
 }
