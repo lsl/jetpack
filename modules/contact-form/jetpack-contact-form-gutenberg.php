@@ -7,18 +7,6 @@
  * @package Jetpack\modules\contact-form
  * @since 5.9
  */
-
-function jetpack_form_init() {
-	register_block_type(
-		'jetpack/form',
-		array(
-			'render_callback' => function ( $args ) {
-				return '<pre>' . print_r( $args, true ) . '</pre>';
-			},
-		)
-	);
-}
-
 function jetpack_form_enqueue_editor() {
 	wp_enqueue_script(
 		'jetpack-contact-form-gutenberg',
@@ -28,5 +16,4 @@ function jetpack_form_enqueue_editor() {
 	);
 }
 
-add_action( 'init', 'jetpack_form_init' );
 add_action( 'enqueue_block_editor_assets', 'jetpack_form_enqueue_editor' );
