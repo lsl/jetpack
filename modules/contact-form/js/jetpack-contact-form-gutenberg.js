@@ -67,7 +67,8 @@
 									key : 'jetpack/form/inspector/subject',
 									onChange : handleSubjectChange,
 									value : props.attributes.subject,
-									label : i18n.__( 'What would you like the subject of the email to be?' )
+									placeholder: i18n.__( '[Site Feedback]' ),
+									label : i18n.__( 'What would you like the subject line of the email to be?' )
 								}
 							),
 							el(
@@ -76,6 +77,7 @@
 									key : 'jetpack/form/inspector/to',
 									onChange : handleToChange,
 									value : props.attributes.to,
+									placeholder: i18n.__( 'admin@example.com' ),
 									label : i18n.__( 'Which email address should we send the submissions to?' )
 								}
 							)
