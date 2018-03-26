@@ -84,7 +84,7 @@
 	// Render the form content
 	Form.save = function save( props ) {
 		return el(
-			'div', { className: props.className },
+			'form', { className: props.className },
 			el( InnerBlocks.Content )
 		);
 	}
