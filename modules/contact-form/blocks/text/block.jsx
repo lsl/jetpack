@@ -40,15 +40,15 @@ let Form = {
 	},
 
 	save: ( { className, attributes, instanceId } ) => {
+		// todo: display a default field label if the user clicks off with it empty? pros and cons, maybe
+		// default value filled and start with the thing highlighted
+
 		// todo: uuid?
 		const id = `jetpack-form-text-TODO`;
 
 		return <div className={ className }>
-			<label for={ id }>
-				{ attributes.fieldname }
-			</label>
-			<input type="text"
-				id={ id }
+			<TextControl
+				label={ attributes.fieldname }
 				name={ inputName( attributes.fieldname ) }
 				placeholder={ attributes.placeholder }
 				required={ attributes.required }
@@ -56,6 +56,8 @@ let Form = {
 		</div>
 	},
 	edit: ( props ) => {
+		// todo: add on select highlight content
+
 		const { attributes, setAttributes, focus } = props;
 		// Not in focus? Show preview.
 		if ( ! focus ) {
@@ -66,8 +68,9 @@ let Form = {
 		return [
 			<TextControl
 				key="jetpack/form-text/field-name"
-				label={ __( 'Field' ) }
+				label={ __( 'Field Name' ) }
 				value={ attributes.fieldname }
+				placeholder={ __( 'e.g. Email' ) }
 				onChange= { value => setAttributes ( { 'fieldname': value } ) }
 				required={ "true" }
 			/>,
