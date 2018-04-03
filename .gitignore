@@ -24,8 +24,9 @@ yarn-error.log
 /css
 _inc/jetpack-strings.php
 /modules/**/*/block.js
+/modules/**/*/block.js.map
 
-## Things for docker-composer 
+## Things for docker-composer
 /docker/data/mysql/*
 !/docker/data/mysql/.gitkeep
 /docker/logs/*

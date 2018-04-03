@@ -558,6 +558,7 @@ gulp.task( 'languages:extract', function( done ) {
  */
 gulp.task( 'gutenpack', function() {
 	return gulp.src( [ '**/*/*block.jsx', ...alwaysIgnoredPaths ] )
+		.pipe(sourcemaps.init())
 		.pipe( babel( {
 			presets: [ 'es2015', 'stage-1', 'react' ],
 			plugins: [
@@ -575,6 +576,7 @@ gulp.task( 'gutenpack', function() {
 		.on( 'error', function( err ) {
 			log( colors.red( err ) );
 		} )
+		.pipe(sourcemaps.write('.'))
 		.pipe( gulp.dest( './' ) );
 } );
 
