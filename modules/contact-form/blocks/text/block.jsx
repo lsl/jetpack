@@ -92,9 +92,6 @@ let Form = {
 			        // todo: onChange probably broken -
 			        // From gutenberg:paragraph onChange={ this.toggleDropCap }
 				/>
-				<CheckboxControl
-
-			    />
 			</InspectorControls>
 		];
 	},
