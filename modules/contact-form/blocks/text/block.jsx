@@ -57,6 +57,7 @@ let Form = {
 	},
 	edit: ( props ) => {
 		// todo: add on select highlight content
+		// todo: on enter, tab over (might be guten scope)
 
 		const { attributes, setAttributes, focus } = props;
 		// Not in focus? Show preview.
