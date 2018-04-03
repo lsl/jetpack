@@ -534,7 +534,7 @@ gulp.task( 'languages:cleanup', [ 'languages:build' ], function( done ) {
 gulp.task( 'languages:extract', function( done ) {
 	const paths = [];
 
-	gulp.src( [ '_inc/client/**/*.js', '_inc/client/**/*.jsx' ] )
+	gulp.src( [ '_inc/client/**/*.js', '_inc/client/**/*.jsx', 'modules/**/*block.js', 'modules/**/*block.jsx' ] )
 		.pipe( tap( function( file ) {
 			paths.push( file.path );
 		} ) )
