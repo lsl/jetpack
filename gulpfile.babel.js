@@ -559,11 +559,16 @@ gulp.task( 'languages:extract', function( done ) {
 gulp.task( 'gutenpack', function() {
 	return gulp.src( [ '**/*/*block.jsx', ...alwaysIgnoredPaths ] )
 		.pipe( babel( {
+			presets: [ 'es2015', 'stage-1', 'react' ],
 			plugins: [
 				[
 					'transform-react-jsx', {
 						pragma: 'wp.element.createElement'
-					}
+					},
+					'transform-runtime',
+					'add-module-exports',
+					'transform-es3-member-expression-literals',
+					'transform-export-extensions'
 				]
 			],
 		} ) )
