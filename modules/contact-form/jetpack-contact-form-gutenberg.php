@@ -7,13 +7,28 @@
  * @package Jetpack\modules\contact-form
  * @since 5.9
  */
-function jetpack_form_enqueue_editor() {
+function jetpack_form_enqueue_block( $name ) {
 	wp_enqueue_script(
-		'jetpack-contact-form-gutenberg',
-		plugins_url( 'blocks/form/block.js', __FILE__ ),
+		"jetpack-form-{$name}",
+		Jetpack::get_file_url_for_environment(
+			"_inc/build/contact-form/blocks/{$name}/block.min.js",
+			"modules/contact-form/blocks/{$name}/block.js"
+		),
 		array( 'wp-blocks', 'wp-components', 'wp-element', 'wp-i18n' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'js/jetpack-contact-form-gutenberg.js' )
+		JETPACK__VERSION,
+		false
 	);
+}
+
+function jetpack_form_enqueue_editor() {
+	jetpack_form_enqueue_block( 'form' );
+	jetpack_form_enqueue_block( 'text' ); // for names
+	// jetpack_form_enqueue_block( 'message' ); // for message text
+	// jetpack_form_enqueue_block( 'email' ); // for emails
+	// jetpack_form_enqueue_block( 'url' ); // for websites
+	// jetpack_form_enqueue_block( 'option' ); // for checkboxes
+	// jetpack_form_enqueue_block( 'choice' ); // for dropdown / radios
+	// jetpack_form_enqueue_block( 'captcha' ); // for captchas
 }
 
 add_action( 'enqueue_block_editor_assets', 'jetpack_form_enqueue_editor' );
