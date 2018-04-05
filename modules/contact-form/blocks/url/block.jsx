@@ -15,21 +15,22 @@ function inputName( str ) {
 
 // Define the form block
 let Form = {
-	title : __( 'Form: Url' ),
+	title : __( 'Form: Website' ),
 	icon : 'editor-textcolor',
 	category : 'common',
-	description: __( 'Url Field' ),
+	keywords: [ __( 'url' ), __( 'website' ) ],
+	description: __( 'Website URL Field' ),
 	attributes: {
 		// Set label to display above the input
 		fieldname: {
 			type: 'string',
-			default: __( 'Website Url' ),
+			default: __( 'Website' ),
 		},
 
 		// Inspector: set placeholder value for the input
 		placeholder: {
 			type: 'string',
-			default: '',
+			default: 'https://',
 		},
 
 		// Inspector: determine if input is required or optional
@@ -68,9 +69,9 @@ let Form = {
 		return [
 			<TextControl
 				key="jetpack/form-text/field-name"
-				label={ __( 'Url Field Name' ) }
+				label={ attributes.fieldname }
 				value={ attributes.fieldname }
-				placeholder={ __( 'e.g. https://mywebsite.com' ) }
+				placeholder={ __( 'e.g. Website' ) }
 				onChange= { value => setAttributes ( { 'fieldname': value } ) }
 				required={ "true" }
 			/>,
@@ -79,7 +80,7 @@ let Form = {
 					key="jetpack/form-text/placeholder"
 					label={ __( 'Placeholder Text' ) }
 					help={ __( 'What would you like the input box to show as placeholder text when empty?' ) }
-					placeholder={ __( 'Placeholder...' ) }
+					placeholder={ __( 'https://...' ) }
 					value={ attributes.placeholder }
 					onChange={ value => setAttributes( { 'placeholder': value } ) }
 				/>
