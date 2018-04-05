@@ -68,7 +68,7 @@ let Form = {
 		return [
 			<TextControl
 				key="jetpack/form-text/field-name"
-				label={ __( 'Email Field Name' ) }
+				label={ attributes.fieldname }
 				value={ attributes.fieldname }
 				placeholder={ __( 'e.g. Email' ) }
 				onChange= { value => setAttributes ( { 'fieldname': value } ) }
@@ -79,7 +79,7 @@ let Form = {
 					key="jetpack/form-text/placeholder"
 					label={ __( 'Placeholder Text' ) }
 					help={ __( 'What would you like the input box to show as placeholder text when empty?' ) }
-					placeholder={ __( 'Placeholder...' ) }
+					placeholder={ __( 'your.email@example.com' ) }
 					value={ attributes.placeholder }
 					onChange={ value => setAttributes( { 'placeholder': value } ) }
 				/>

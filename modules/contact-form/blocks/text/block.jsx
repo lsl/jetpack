@@ -23,7 +23,7 @@ let Form = {
 		// Set label to display above the input
 		fieldname: {
 			type: 'string',
-			default: '',
+			default: 'Custom Text',
 		},
 
 		// Inspector: set placeholder value for the input
@@ -69,9 +69,9 @@ let Form = {
 		return [
 			<TextControl
 				key="jetpack/form-text/field-name"
-				label={ __( 'Field Name' ) }
+				label={ attributes.fieldname }
 				value={ attributes.fieldname }
-				placeholder={ __( 'e.g. Email' ) }
+				placeholder={ __( 'e.g. Name' ) }
 				onChange= { value => setAttributes ( { 'fieldname': value } ) }
 				required={ "true" }
 			/>,
