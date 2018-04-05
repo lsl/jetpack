@@ -25,7 +25,7 @@ function jetpack_form_enqueue_editor() {
 	jetpack_form_enqueue_block( 'text' ); // for names
 	// jetpack_form_enqueue_block( 'message' ); // for message text
 	jetpack_form_enqueue_block( 'email' ); // for emails
-	// jetpack_form_enqueue_block( 'url' ); // for websites
+	jetpack_form_enqueue_block( 'url' ); // for websites
 	// jetpack_form_enqueue_block( 'option' ); // for checkboxes
 	// jetpack_form_enqueue_block( 'choice' ); // for dropdown / radios
 	// jetpack_form_enqueue_block( 'captcha' ); // for captchas
