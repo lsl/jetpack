@@ -28,6 +28,7 @@ function jetpack_form_enqueue_editor() {
 	jetpack_form_enqueue_block( 'url' );
 	jetpack_form_enqueue_block( 'name' );
 	jetpack_form_enqueue_block( 'phone' );
+	jetpack_form_enqueue_block( 'attachment' );
 	// jetpack_form_enqueue_block( 'option' ); // for checkboxes
 	// jetpack_form_enqueue_block( 'choice' ); // for dropdown / radios
 	// jetpack_form_enqueue_block( 'captcha' ); // for captchas
