@@ -339,6 +339,7 @@ gulp.task( 'check:DIR', function() {
 		.pipe( check( '__DIR__' ) )
 		.on( 'error', function( err ) {
 			log( colors.red( err ) );
+			this.emit('end');
 		} );
 } );
 
@@ -358,6 +359,7 @@ gulp.task( 'php:unit', function() {
 		.pipe( phpunit( 'phpunit', { colors: 'disabled' } ) )
 		.on( 'error', function( err ) {
 			log( colors.red( err ) );
+			this.emit('end');
 		} );
 } );
 
@@ -569,6 +571,7 @@ gulp.task( 'gutenpack', function() {
 		} ) )
 		.on( 'error', function( err ) {
 			log( colors.red( err ) );
+			this.emit('end');
 		} )
 		.pipe( gulp.dest( './' ) );
 } );
