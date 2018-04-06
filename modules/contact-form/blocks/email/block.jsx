@@ -14,7 +14,7 @@ function inputName( str ) {
 }
 
 // Define the form block
-let Form = {
+let FormEmail = {
 	title : __( 'Form: Email' ),
 	icon : 'editor-textcolor',
 	category : 'common',
@@ -44,7 +44,7 @@ let Form = {
 		// default value filled and start with the thing highlighted
 
 		// todo: uuid?
-		const id = `jetpack-form-text-TODO`;
+		const id = `jetpack-form-email-TODO`;
 
 		return <div className={ className }>
 			<TextControl
@@ -61,7 +61,7 @@ let Form = {
 		const { attributes, setAttributes, focus } = props;
 		// Not in focus? Show preview.
 		if ( ! focus ) {
-			return Form.save(props);
+			return FormEmail.save(props);
 		}
 
 		// In focus? Show editable.
@@ -98,4 +98,4 @@ let Form = {
 };
 
 // Register the form block under jetpack/form
-registerBlockType( 'jetpack/form-email', Form );
+registerBlockType( 'jetpack/form-email', FormEmail );

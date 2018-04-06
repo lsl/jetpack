@@ -14,7 +14,7 @@ function inputName( str ) {
 }
 
 // Define the form block
-let Form = {
+let FormText = {
 	title : __( 'Form: Text' ),
 	icon : 'editor-textcolor',
 	category : 'common',
@@ -62,7 +62,7 @@ let Form = {
 		const { attributes, setAttributes, focus } = props;
 		// Not in focus? Show preview.
 		if ( ! focus ) {
-			return Form.save(props);
+			return FormText.save(props);
 		}
 
 		// In focus? Show editable.
@@ -99,4 +99,4 @@ let Form = {
 };
 
 // Register the form block under jetpack/form
-registerBlockType( 'jetpack/form-text', Form );
+registerBlockType( 'jetpack/form-text', FormText );

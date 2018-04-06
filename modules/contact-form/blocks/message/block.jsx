@@ -14,7 +14,7 @@ function inputName( str ) {
 }
 
 // Define the form block
-let Form = {
+let FormMessage = {
 	title : __( 'Form: Message' ),
 	icon : 'editor-textcolor',
 	category : 'common',
@@ -49,7 +49,7 @@ let Form = {
 		// default value filled and start with the thing highlighted
 
 		// todo: uuid?
-		const id = `jetpack-form-text-TODO`;
+		const id = `jetpack-form-message-TODO`;
 
 		return <div className={ className }>
 			<TextareaControl
@@ -68,7 +68,7 @@ let Form = {
 		const { attributes, setAttributes, focus } = props;
 		// Not in focus? Show preview.
 		if ( ! focus ) {
-			return Form.save(props);
+			return FormMessage.save(props);
 		}
 
 		// In focus? Show editable.
@@ -114,4 +114,4 @@ let Form = {
 };
 
 // Register the form block under jetpack/form
-registerBlockType( 'jetpack/form-message', Form );
+registerBlockType( 'jetpack/form-message', FormMessage );

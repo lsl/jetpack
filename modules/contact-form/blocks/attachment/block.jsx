@@ -14,7 +14,7 @@ function inputName( str ) {
 }
 
 // Define the form block
-let Form = {
+let FormAttachment = {
 	title : __( 'Form: Attachment' ),
 	icon : 'editor-textcolor',
 	category : 'common',
@@ -46,10 +46,10 @@ let Form = {
 
 	save: ( { className, attributes, instanceId } ) => {
 		// todo: uuid?
-		const id = `jetpack-form-text-TODO`;
+		const id = `jetpack-form-attachment-TODO`;
 
 		return <div className={ className }>
-			<BaseControl label={ attributes.fieldname } id={ id }>
+			<BaseControl label={ attributes.fieldname }>
 				<FormFileUpload
 					name={ inputName( attributes.fieldname ) }
 					placeholder={ attributes.placeholder }
@@ -64,7 +64,7 @@ let Form = {
 
 		// Not in focus? Show preview.
 		if ( ! focus ) {
-			return Form.save(props);
+			return FormAttachment.save(props);
 		}
 
 		// In focus? Show editable.
@@ -93,4 +93,4 @@ let Form = {
 };
 
 // Register the form block under jetpack/form
-registerBlockType( 'jetpack/form-attachment', Form );
+registerBlockType( 'jetpack/form-attachment', FormAttachment );
