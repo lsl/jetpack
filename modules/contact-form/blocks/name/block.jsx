@@ -16,7 +16,7 @@ function inputName( str ) {
 // Define the form block
 let FormName = {
 	title : __( 'Form: Name' ),
-	icon : 'editor-textcolor',
+	icon : 'nametag',
 	category : 'common',
 	description: __( 'Name field' ),
 	attributes: {

@@ -16,7 +16,7 @@ function inputName( str ) {
 // Define the form block
 let FormPhone = {
 	title : __( 'Form: Phone' ),
-	icon : 'editor-textcolor',
+	icon : 'phone',
 	category : 'common',
 	description: __( 'Phone Number field' ),
 	attributes: {

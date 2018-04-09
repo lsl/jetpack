@@ -16,7 +16,7 @@ function inputName( str ) {
 // Define the form block
 let FormUrl = {
 	title : __( 'Form: Website' ),
-	icon : 'editor-textcolor',
+	icon : 'admin-links',
 	category : 'common',
 	keywords: [ __( 'url' ), __( 'website' ) ],
 	description: __( 'Website URL Field' ),

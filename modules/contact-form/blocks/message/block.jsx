@@ -16,7 +16,7 @@ function inputName( str ) {
 // Define the form block
 let FormMessage = {
 	title : __( 'Form: Message' ),
-	icon : 'editor-textcolor',
+	icon : 'text',
 	category : 'common',
 	description: __( 'Multiline text field' ),
 	attributes: {

@@ -16,7 +16,7 @@ function inputName( str ) {
 // Define the form block
 let FormEmail = {
 	title : __( 'Form: Email' ),
-	icon : 'editor-textcolor',
+	icon : 'email',
 	category : 'common',
 	description: __( 'Email Field' ),
 	attributes: {

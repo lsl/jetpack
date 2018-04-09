@@ -16,7 +16,7 @@ function inputName( str ) {
 // Define the form block
 let FormAttachment = {
 	title : __( 'Form: Attachment' ),
-	icon : 'editor-textcolor',
+	icon : 'upload',
 	category : 'common',
 	description: __( 'File attachment form element' ),
 	attributes: {
