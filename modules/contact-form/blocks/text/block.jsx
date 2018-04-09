@@ -88,7 +88,7 @@ let FormText = {
 					key="jetpack/form-text/required"
 					label={ __( 'Is required?' ) }
 					help={ __( 'Should the user be forced to enter text into this field?' ) }
-					checked={ attributes.required  }
+					checked={ attributes.required }
 					onChange={ value => setAttributes( { 'required': value } ) }
 					// todo: onChange probably broken -
 					// From gutenberg:paragraph onChange={ this.toggleDropCap }
